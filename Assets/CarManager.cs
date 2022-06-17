@@ -2,12 +2,33 @@ using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
 
+public enum WavesState { Spawinng, EndSpawning }
+
 public class CarManager : Singleton<CarManager>
 {
     [SerializeField] private List<Car> _allCarsSpawned = new List<Car>();
 
-    
+    public WavesState WaveState;
 
+    private void Start()
+    {
+        WaveState = WavesState.Spawinng;
+    }
+
+    private void OnEnable()
+    {
+        GameManager.OnWaveCompleted += WaveCompleted;
+    }
+
+    private void WaveCompleted()
+    {
+        WaveState = WavesState.EndSpawning;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnWaveCompleted -= WaveCompleted;
+    }
     public void AddCar(Car car)
     {
         _allCarsSpawned.Add(car);
@@ -17,7 +38,10 @@ public class CarManager : Singleton<CarManager>
     {
         _allCarsSpawned.Remove(car);
 
-        if (!HasPoliceCars()) GameManager.Instance.ChangeGameState(GameState.WaveCompleted);
+        if (!HasPoliceCars() && WaveState == WavesState.EndSpawning)
+        {
+            GameManager.Instance.ChangeGameState(GameState.StartSpawning);
+        }
     }
 
     private bool HasPoliceCars()

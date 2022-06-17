@@ -28,7 +28,6 @@ public class PlayerCar : Car
         {
             if (CarManager.Instance.HasCivilianCarOnTheLine(CurrentRunway))
             {
-                Debug.Log("Yep");
                 ChangeTheLine();
             }
             _timer = 0;
@@ -65,7 +64,7 @@ public class PlayerCar : Car
         }
         else
         {
-            CurrentRunway = GetRunway();
+            CurrentRunway = GetMostFarCivilianCarOnLines();
             switch (CurrentRunway)
             {
                 case CurrentRunway.Left:
@@ -85,7 +84,7 @@ public class PlayerCar : Car
         StartCoroutine(StartTurn(value));
     }
 
-    private CurrentRunway GetRunway()
+    private CurrentRunway GetMostFarCivilianCarOnLines()
     {
         List<Car> _allCars = CarManager.Instance.GetSpawnedCars();
 
@@ -139,5 +138,23 @@ public class PlayerCar : Car
 
             yield return null;
         }
+    }
+
+    public override void OnTriggerEnter(Collider other)
+    {
+        PoliceCar policeCar = other.GetComponent<PoliceCar>();
+
+        if (policeCar)
+        {
+            Death();
+        }
+    }
+
+    public override void Death()
+    {
+        base.Death();
+        GameManager.Instance.ChangeGameState(GameState.GameOver);
+        StopAllCoroutines();
+
     }
 }

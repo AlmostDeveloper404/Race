@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: Second
   m_EditorClassIdentifier: 
   WaveIndex: 1
-  CarsOrder: 0000000000000000010000000100000000000000
+  CarInfo:
+  - SpawnInterval: 2
+    CarType: 0
+  - SpawnInterval: 2
+    CarType: 0
+  - SpawnInterval: 2
+    CarType: 0

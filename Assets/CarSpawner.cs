@@ -1,5 +1,4 @@
 using System.Collections;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +20,33 @@ public class CarSpawner : MonoBehaviour
     {
         FillSpawnPoints();
         LoadAllLevelCars();
+    }
+
+    private void OnEnable()
+    {
+        GameManager.OnGameOver += StopSpawning;
+        GameManager.OnStartSpawnNewWave += StartSpawning;
+    }
+    private void Start()
+    {
+        StartSpawning();
+    }
+
+    private void StartSpawning()
+    {
+        StartCoroutine(SpawnNewWave());
+    }
+
+
+    private void StopSpawning()
+    {
+        StopAllCoroutines();
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameOver -= StopSpawning;
+        GameManager.OnStartSpawnNewWave -= StartSpawning;
     }
 
     private void FillSpawnPoints()
@@ -51,13 +77,9 @@ public class CarSpawner : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        StartCoroutine(SpawnNewWave());
-    }
-
     private IEnumerator SpawnNewWave()
     {
+        Debug.Log("Yep");
         yield return new WaitForSeconds(_timeToSpawnWaves);
         StartCoroutine(StartSpawningCars(_allLevelWaves[_currentWaveIndex]));
         _currentWaveIndex++;
@@ -66,9 +88,9 @@ public class CarSpawner : MonoBehaviour
 
     private IEnumerator StartSpawningCars(Wave currentWave)
     {
+        Debug.Log("Yep");
         for (int i = 0; i < currentWave.CarInfo.Length; i++)
         {
-            yield return new WaitForSeconds(currentWave.CarInfo[i].SpawnInterval);
 
             for (int c = 0; c < _allCars.Count; c++)
             {
@@ -83,12 +105,17 @@ public class CarSpawner : MonoBehaviour
                 }
             }
 
+            yield return new WaitForSeconds(currentWave.CarInfo[i].SpawnInterval);
         }
+
+        GameManager.Instance.ChangeGameState(GameState.WaveCompleted);
     }
+
+
 
     private void Spawn(Car carToSpawn)
     {
-        int lineIndex = UnityEngine.Random.Range(0, _spawnPoints.Length);
+        int lineIndex = Random.Range(0, _spawnPoints.Length);
 
         CurrentRunway currentRunway = CurrentRunway.Centre;
 

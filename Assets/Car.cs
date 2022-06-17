@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public enum CurrentRunway { Left, Centre, Right }
-public enum CarTypes { Police, Civilian }
+public enum CarTypes { Police, Civilian, Player }
 
 public class Car : MonoBehaviour
 {
@@ -15,6 +15,8 @@ public class Car : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+
+
     public virtual void Enable(Transform positionToSpawn, CurrentRunway currentRunway)
     {
         gameObject.SetActive(true);
@@ -24,4 +26,16 @@ public class Car : MonoBehaviour
 
     public bool IsEnabled() => gameObject.activeSelf;
 
+    public virtual void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Border"))
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    public virtual void Death()
+    {
+        gameObject.SetActive(false);
+    }
 }

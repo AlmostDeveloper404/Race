@@ -14,63 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveIndex: 0
   CarInfo:
-  - SpawnInterval: 2
+  - SpawnInterval: 4
     CarType: 1
-  - SpawnInterval: 2
-    CarType: 0
-  - SpawnInterval: 2
-    CarType: 0
-  - SpawnInterval: 2
+  - SpawnInterval: 3
     CarType: 1
-  - SpawnInterval: 2
+  - SpawnInterval: 3
+    CarType: 0
+  - SpawnInterval: 5
     CarType: 0
   - SpawnInterval: 2
-    CarType: 1
-  - SpawnInterval: 2
-    CarType: 0
-  - SpawnInterval: 2
-    CarType: 0
-  - SpawnInterval: 1
-    CarType: 0
-  - SpawnInterval: 1
-    CarType: 0
-  - SpawnInterval: 2
-    CarType: 1
-  - SpawnInterval: 1
-    CarType: 0
-  - SpawnInterval: 1
-    CarType: 0
-  - SpawnInterval: 1
-    CarType: 0
-  - SpawnInterval: 1
-    CarType: 1
-  - SpawnInterval: 1
-    CarType: 0
-  - SpawnInterval: 1
-    CarType: 1
-  - SpawnInterval: 1
-    CarType: 1
-  - SpawnInterval: 1
-    CarType: 0
-  - SpawnInterval: 1
-    CarType: 0
-  - SpawnInterval: 1
-    CarType: 0
-  - SpawnInterval: 1
-    CarType: 0
-  - SpawnInterval: 1
-    CarType: 1
-  - SpawnInterval: 1
-    CarType: 0
-  - SpawnInterval: 1
-    CarType: 0
-  - SpawnInterval: 1
-    CarType: 1
-  - SpawnInterval: 1
-    CarType: 0
-  - SpawnInterval: 1
-    CarType: 0
-  - SpawnInterval: 1
-    CarType: 1
-  - SpawnInterval: 1
     CarType: 0
