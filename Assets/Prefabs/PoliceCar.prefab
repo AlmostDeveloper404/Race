@@ -156,10 +156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ddc95fb9920f2248b1456a6f581c7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 15
+  Speed: 20
   CurrentCarType: 0
   CurrentRunway: 0
   _timeToCheckForPlayer: 0.1
   _timeToChangeRunway: 2
-  _distanceToStartAttack: 20
+  _distanceToStartAttack: 10
   PoliceCarState: 0

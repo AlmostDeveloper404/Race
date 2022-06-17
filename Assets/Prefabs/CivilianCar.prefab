@@ -170,6 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db0c8b5c8fe8b894e818c322f9c1d84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 12
+  Speed: 18
   CurrentCarType: 1
   CurrentRunway: 0

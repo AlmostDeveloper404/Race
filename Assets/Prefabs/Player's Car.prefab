@@ -191,7 +191,7 @@ MonoBehaviour:
   Speed: 10
   CurrentCarType: 2
   CurrentRunway: 0
-  _timeToCheckForCivilianCarOnAWay: 2
+  _timeToCheckForCivilianCarOnAWay: 1
 --- !u!114 &377373566
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,13 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveIndex: 0
   CarInfo:
-  - SpawnInterval: 4
+  - SpawnInterval: 1
+    CarType: 0
+    CurrentRunway: 0
+  - SpawnInterval: 1
+    CarType: 0
+    CurrentRunway: 0
+  - SpawnInterval: 1
     CarType: 1
-  - SpawnInterval: 3
+    CurrentRunway: 0
+  - SpawnInterval: 1
+    CarType: 0
+    CurrentRunway: 0
+  - SpawnInterval: 1
     CarType: 1
-  - SpawnInterval: 3
+    CurrentRunway: 0
+  - SpawnInterval: 1
     CarType: 0
-  - SpawnInterval: 5
+    CurrentRunway: 0
+  - SpawnInterval: 1
     CarType: 0
-  - SpawnInterval: 2
+    CurrentRunway: 0
+  - SpawnInterval: 1
+    CarType: 1
+    CurrentRunway: 0
+  - SpawnInterval: 1
+    CarType: 1
+    CurrentRunway: 0
+  - SpawnInterval: 1
     CarType: 0
+    CurrentRunway: 0

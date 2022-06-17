@@ -130,7 +130,7 @@ public class PoliceCar : Car
         for (float i = 0; i < 2f; i += Time.deltaTime)
         {
             Vector3 pos = transform.position;
-            pos.x = Mathf.Lerp(pos.x, value, 3f * Time.deltaTime);
+            pos.x = Mathf.Lerp(pos.x, value, 6f * Time.deltaTime);
 
             transform.position = pos;
 

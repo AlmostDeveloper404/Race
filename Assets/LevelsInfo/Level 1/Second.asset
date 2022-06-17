@@ -17,6 +17,16 @@ MonoBehaviour:
   - SpawnInterval: 2
     CarType: 0
   - SpawnInterval: 2
+    CarType: 1
+  - SpawnInterval: 2
+    CarType: 0
+  - SpawnInterval: 2
+    CarType: 0
+  - SpawnInterval: 2
+    CarType: 1
+  - SpawnInterval: 2
+    CarType: 1
+  - SpawnInterval: 2
     CarType: 0
   - SpawnInterval: 2
     CarType: 0

@@ -88,7 +88,6 @@ public class CarSpawner : MonoBehaviour
 
     private IEnumerator StartSpawningCars(Wave currentWave)
     {
-        Debug.Log("Yep");
         for (int i = 0; i < currentWave.CarInfo.Length; i++)
         {
 
