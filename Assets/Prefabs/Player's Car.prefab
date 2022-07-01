@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 404262004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,6 +30,66 @@ Transform:
   m_Father: {fileID: 6696924431898216170}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1305147107721142933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5289619757098541561}
+  m_Layer: 8
+  m_Name: LeftBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5289619757098541561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305147107721142933}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.25, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6696924431898216170}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1604843876638454262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7192708076888880621}
+  m_Layer: 8
+  m_Name: RightBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7192708076888880621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604843876638454262}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.25, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6696924431898216170}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6696924430666783320
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,7 +101,7 @@ GameObject:
   - component: {fileID: 6696924430666783316}
   - component: {fileID: 6696924430666783323}
   - component: {fileID: 6696924430666783322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player's Car GRX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +141,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -122,9 +183,9 @@ GameObject:
   - component: {fileID: 6696924431898216170}
   - component: {fileID: 6696924431898216164}
   - component: {fileID: 6696924431898216165}
-  - component: {fileID: 6696924431898216171}
   - component: {fileID: 377373566}
-  m_Layer: 0
+  - component: {fileID: -4219176181300087141}
+  m_Layer: 8
   m_Name: Player's Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,6 +205,8 @@ Transform:
   m_Children:
   - {fileID: 6696924430666783316}
   - {fileID: 404262004}
+  - {fileID: 7192708076888880621}
+  - {fileID: 5289619757098541561}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -176,22 +239,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1, z: 3}
   m_Center: {x: 0, y: 0, z: 1.5}
---- !u!114 &6696924431898216171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6696924431898216169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 445ff3e5441446e47bcea8d4d8c21af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 10
-  CurrentCarType: 2
-  CurrentRunway: 0
-  _timeToCheckForCivilianCarOnAWay: 1
 --- !u!114 &377373566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +251,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ab5b1e8ccfbee42a90bb9e573b6922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletsAmount: 10
+  _bulletPref: {fileID: 2274376338012003499, guid: cf4fe7be49b5e30448f3003952ab12e4, type: 3}
   _spawnPoint: {fileID: 404262004}
-  _bulletPref: {fileID: 2274376338012003495, guid: cf4fe7be49b5e30448f3003952ab12e4, type: 3}
-  _poolBullets: []
+  _bulletsCapacity: 4
+  _intervalBetweenShots: 0.2
+  _reloadTime: 2
+--- !u!114 &-4219176181300087141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6696924431898216169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22fd9fc1519461142916525651dfee17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 14
+  CurrentCarType: 2
+  CurrentRunway: 1
+  _turningSpeed: 6
+  _rightBox: {fileID: 7192708076888880621}
+  _leftBox: {fileID: 5289619757098541561}
+  _boxOffset: 7
+  _boxWidth: 1
+  _boxLength: 1
+  _forwardBoxSize: {x: 1, y: 2}
+  _lineSizes: {x: -3.25, y: 0, z: 3.25}
+  _callsInSec: 1
+  _overlapBoxMask:
+    serializedVersion: 2
+    m_Bits: 256
