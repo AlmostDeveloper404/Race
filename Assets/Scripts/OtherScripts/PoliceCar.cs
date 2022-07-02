@@ -69,12 +69,11 @@ public class PoliceCar : Car
 
                     if (distance > _distanceToAttack)
                     {
-                        PoliceCarState = PoliceCarState.Attack;
+                        PoliceCarState = PoliceCarState.Chase;
                     }
 
                     if (CurrentRunway == _playerCar.CurrentRunway && GetCarInFront())
                     {
-                        Debug.Log(GetCarInFront());
                         if (GetCarInFront().CurrentCarType != CarTypes.Player)
                         {
                             ChangeRunway();
@@ -160,7 +159,6 @@ public class PoliceCar : Car
     public override void Turn()
     {
         base.Turn();
-
     }
 
     public override void Disable()

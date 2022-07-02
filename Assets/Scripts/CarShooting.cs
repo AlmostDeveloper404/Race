@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.EventSystems;
 using System;
 
 public class CarShooting : MonoBehaviour
@@ -39,8 +38,7 @@ public class CarShooting : MonoBehaviour
     {
         _timer += Time.deltaTime;
 
-
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() && _timer > _intervalBetweenShots)
+        if (Input.GetMouseButtonDown(0) && !Helpers.Helper.IsOverUI() && _timer > _intervalBetweenShots)
         {
             _timer = 0;
 
