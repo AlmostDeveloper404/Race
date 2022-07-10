@@ -1,17 +1,24 @@
 using UnityEngine;
+using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 
 public enum CurrentRunway { Left, Centre, Right }
 public enum CarTypes { Police, Civilian, Player }
 
+[RequireComponent(typeof(Animator))]
 public class Car : MonoBehaviour
 {
     public float Speed;
     public CarTypes CurrentCarType;
     public CurrentRunway CurrentRunway;
 
+    private Animator _animator;
+
     [SerializeField] private float _turningSpeed;
+
+    [SerializeField] private TrailRenderer[] _renderers;
+    [SerializeField] private float _timeToEmit;
 
     [Header("Box")]
     [SerializeField] protected Transform _rightBox;
@@ -29,6 +36,7 @@ public class Car : MonoBehaviour
 
     protected float _timer;
     [SerializeField] protected float _callsInSec;
+    [SerializeField] protected ParticleSystem _deathParticles;
 
 
 
@@ -39,6 +47,7 @@ public class Car : MonoBehaviour
 
     public virtual void Start()
     {
+        _animator = GetComponent<Animator>();
         FillData();
     }
 
@@ -132,20 +141,44 @@ public class Car : MonoBehaviour
 
     protected void ApplyTurn(CurrentRunway currentRunway)
     {
+        float value = 0;
+
         switch (currentRunway)
         {
             case CurrentRunway.Left:
-                _value = _lineSizes.x;
+                value = _lineSizes.x;
                 break;
             case CurrentRunway.Centre:
-                _value = _lineSizes.y;
+                value = _lineSizes.y;
                 break;
             case CurrentRunway.Right:
-                _value = _lineSizes.z;
+                value = _lineSizes.z;
                 break;
             default:
                 break;
         }
+        if (_value != value)
+        {
+            _animator.SetTrigger(_value < value ? Animations.TurnRight : Animations.TurnLeft);
+            SwitchEmmiting();
+            StartCoroutine(DisableEmiting());
+        }
+
+        _value = value;
+    }
+
+    private void SwitchEmmiting()
+    {
+        foreach (var item in _renderers)
+        {
+            item.emitting = item.emitting == true ? false : true;
+        }
+    }
+
+    private IEnumerator DisableEmiting()
+    {
+        yield return Helpers.Helper.GetWait(_timeToEmit);
+        SwitchEmmiting();
     }
 
     public virtual void Turn()

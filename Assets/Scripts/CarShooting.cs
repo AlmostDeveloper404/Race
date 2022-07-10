@@ -12,6 +12,8 @@ public class CarShooting : MonoBehaviour
     [SerializeField] private float _intervalBetweenShots;
     [SerializeField] private float _reloadTime;
 
+    [SerializeField] private GameObject _missile;
+
     private int _bulletsUsed;
     private float _timer;
 
@@ -20,9 +22,13 @@ public class CarShooting : MonoBehaviour
     public static Action<float> OnReloading;
     public static Action OnShooted;
 
+    private Animator _animator;
+
     private void Awake()
     {
         _timer = _intervalBetweenShots;
+
+        _animator = GetComponent<Animator>();
 
         _allBullets = new Bullet[_bulletsAmount];
 
@@ -42,12 +48,17 @@ public class CarShooting : MonoBehaviour
         {
             _timer = 0;
 
-            Shoot();
+            if (_bulletsUsed != _bulletsCapacity)
+            {
+                _animator.SetTrigger(Animations.IsAttacking);
+            }
         }
     }
 
     private void Shoot()
     {
+        _missile.SetActive(false);
+
         for (int i = 0; i < _allBullets.Length; i++)
         {
             Bullet bullet = _allBullets[i];
@@ -64,7 +75,7 @@ public class CarShooting : MonoBehaviour
 
                 bullet.gameObject.SetActive(true);
                 bullet.transform.position = _spawnPoint.transform.position;
-                bullet.transform.rotation = _spawnPoint.transform.rotation;
+                bullet.transform.rotation = Quaternion.identity;
                 return;
             }
             else
@@ -74,9 +85,15 @@ public class CarShooting : MonoBehaviour
         }
     }
 
+    private void EndFastReloading()
+    {
+        _missile.SetActive(true);
+    }
+
     public void Reload()
     {
         OnReloading?.Invoke(_reloadTime);
+        _animator.SetBool(Animations.IsReloading, true);
         StartCoroutine(Reloading());
     }
 
@@ -84,7 +101,9 @@ public class CarShooting : MonoBehaviour
     private IEnumerator Reloading()
     {
         _bulletsUsed = _bulletsCapacity;
-        yield return new WaitForSeconds(_reloadTime);
+        yield return Helpers.Helper.GetWait(_reloadTime);
+        _missile.SetActive(true);
+        _animator.SetBool(Animations.IsReloading, false);
         _bulletsUsed = 0;
     }
 

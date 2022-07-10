@@ -7,6 +7,8 @@ public class PoliceCar : Car
 {
     private PlayerCar _playerCar;
 
+    [SerializeField] private GameObject _deathCar;
+
     [SerializeField] private float _distanceToAttack;
 
     public PoliceCarState PoliceCarState;
@@ -25,14 +27,11 @@ public class PoliceCar : Car
         PoliceCarState = PoliceCarState.Chase;
         Speed = _policeCarSpeed;
         _timer = _callsInSec;
-
-        _playerCar.OnTurningStarted += ChangeRunway;
         GameManager.OnGameOver += GameOver;
     }
 
     private void OnDisable()
     {
-        _playerCar.OnTurningStarted -= ChangeRunway;
         GameManager.OnGameOver -= GameOver;
     }
 
@@ -50,6 +49,9 @@ public class PoliceCar : Car
             _timer = 0;
             float distance = Mathf.Sqrt(Mathf.Abs(Mathf.Pow(Vector3.Distance(_playerCar.transform.position, transform.position), 2f) -
                                 Mathf.Pow(Vector3.Distance(new Vector3(_playerCar.transform.position.x, 0f, 0f), new Vector3(transform.position.x, 0f, 0f)), 2f)));
+            Car car = GetCarInFront();
+
+
             switch (PoliceCarState)
             {
                 case PoliceCarState.Chase:
@@ -58,9 +60,9 @@ public class PoliceCar : Car
                     {
                         PoliceCarState = PoliceCarState.Attack;
                     }
-                    if (GetCarInFront() || CurrentRunway == _playerCar.CurrentRunway)
+                    if (car || CurrentRunway == _playerCar.CurrentRunway)
                     {
-                        Speed = GetCarInFront() ? GetCarInFront().Speed : Speed;
+                        Speed = car ? car.Speed : Speed;
                         ChangeRunway();
                     }
 
@@ -72,31 +74,30 @@ public class PoliceCar : Car
                         PoliceCarState = PoliceCarState.Chase;
                     }
 
-                    if (CurrentRunway == _playerCar.CurrentRunway && GetCarInFront())
-                    {
-                        if (GetCarInFront().CurrentCarType != CarTypes.Player)
-                        {
-                            ChangeRunway();
-                            return;
-                        }
-                        else
-                        {
-                            return;
-                        }
-                        
-                    }
                     if (CanTurn(_playerCar.CurrentRunway))
                     {
                         Speed = _policeCarSpeed;
                         CurrentRunway = _playerCar.CurrentRunway;
-                        _value = _playerCar.transform.position.x;
+                        ApplyTurn(_playerCar.CurrentRunway);
+                        PoliceCarState = PoliceCarState.Idle;
                     }
                     else
                     {
-                        Speed = GetCarInFront() ? GetCarInFront().Speed : _playerCar.Speed;
+                        if (CurrentRunway == _playerCar.CurrentRunway)
+                        {
+                            Speed = _policeCarSpeed;
+                            ApplyTurn(_playerCar.CurrentRunway);
+                        }
+                        else
+                        {
+                            Speed = _playerCar.Speed;
+                        }
 
                     }
 
+                    break;
+                case PoliceCarState.Idle:
+                    _value = _playerCar.transform.position.x;
                     break;
                 default:
                     break;
@@ -187,6 +188,10 @@ public class PoliceCar : Car
     public override void Death()
     {
         base.Death();
+        _deathCar.SetActive(true);
+        _deathCar.transform.parent = null;
+        _deathCar.transform.position = transform.position;
+
         CarManager.Instance.RemoveCar(this, false);
     }
 

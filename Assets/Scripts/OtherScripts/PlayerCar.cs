@@ -3,8 +3,6 @@ using System;
 
 public class PlayerCar : Car
 {
-    public Action OnTurningStarted;
-
     public override void Start()
     {
         base.Start();
@@ -31,7 +29,6 @@ public class PlayerCar : Car
         if (CanTurn(CurrentRunway))
         {
             ApplyTurn(CurrentRunway);
-            OnTurningStarted?.Invoke();
         }
 
     }

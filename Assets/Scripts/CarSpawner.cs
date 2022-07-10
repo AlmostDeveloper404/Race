@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -7,7 +8,7 @@ public class CarSpawner : Singleton<CarManager>
 {
     public static Action OnNextWaveReady;
 
-    [SerializeField] private Transform[] _spawnPoints;
+    private Transform[] _spawnPoints;
 
     private List<Car> _allCars = new List<Car>();
 
@@ -21,8 +22,7 @@ public class CarSpawner : Singleton<CarManager>
 
     private void Awake()
     {
-        FillSpawnPoints();
-        LoadAllLevelCars();
+        _allLevelWaves = Resources.LoadAll<Wave>($"LevelsInfo/Level {SceneManager.GetActiveScene().buildIndex}");
     }
 
     private void OnEnable()
@@ -32,6 +32,9 @@ public class CarSpawner : Singleton<CarManager>
     }
     private void Start()
     {
+        FillSpawnPoints();
+        LoadAllLevelCars();
+
         StartSpawning();
     }
 
@@ -47,21 +50,6 @@ public class CarSpawner : Singleton<CarManager>
                 policeCarAmount++;
             }
         }
-
-        //for (int i = 0; i < _allLevelWaves.Length; i++)
-        //{
-        //    Wave wave = _allLevelWaves[i];
-
-        //    for (int y = 0; y < wave.CarInfo.Length; y++)
-        //    {
-        //        CarInfo carInfo = wave.CarInfo[y];
-        //        if (carInfo.CarType == CarTypes.Police)
-        //        {
-        //            policeCarAmount++;
-        //        }
-        //    }
-        //}
-
         return policeCarAmount;
     }
 
@@ -69,7 +57,6 @@ public class CarSpawner : Singleton<CarManager>
     {
         if (_currentWaveIndex == _allLevelWaves.Length)
         {
-            Debug.Log("Yep");
             GameManager.Instance.ChangeGameState(GameState.LevelCompleted);
             return;
         }
@@ -121,7 +108,7 @@ public class CarSpawner : Singleton<CarManager>
 
         OnNextWaveReady?.Invoke();
 
-        yield return new WaitForSeconds(_timeToSpawnWaves);
+        yield return Helpers.Helper.GetWait(_timeToSpawnWaves);
 
         StartCoroutine(StartSpawningCars(_allLevelWaves[_currentWaveIndex]));
         _currentWaveIndex++;

@@ -10,7 +10,7 @@ public class CarManager : Singleton<CarManager>
     public static Action<int, int> OnPoliceCarDestroid;
     public static Action<int, int> OnCivilianCarDestroid;
 
-    [SerializeField] private List<Car> _allCarsSpawned = new List<Car>();
+    private List<Car> _allCarsSpawned = new List<Car>();
 
     [SerializeField] private int _availableToDestroyCivilian;
     private int _currentPoliceCarAmount;
@@ -26,11 +26,6 @@ public class CarManager : Singleton<CarManager>
     private void Awake()
     {
         _carSpawner = GetComponent<CarSpawner>();
-    }
-
-    private void Start()
-    {
-        //UpdateCarsInWave();
     }
 
     private void UpdateCarsInWave()

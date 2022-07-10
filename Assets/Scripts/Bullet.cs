@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector3.forward * _bulletSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward * _bulletSpeed * Time.deltaTime, Space.World);
     }
 
     public void Disable()

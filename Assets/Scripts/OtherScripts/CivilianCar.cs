@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CivilianCar : Car
 {
+    [SerializeField] private GameObject _destroedCar;
+
     public override void CheckRoadTrafic()
     {
         base.CheckRoadTrafic();
@@ -20,7 +22,7 @@ public class CivilianCar : Car
         if (other.CompareTag("Border"))
         {
             base.Death();
-            CarManager.Instance.RemoveCar(this,false);
+            CarManager.Instance.RemoveCar(this, false);
         }
 
     }
@@ -28,6 +30,12 @@ public class CivilianCar : Car
     public override void Death()
     {
         base.Death();
+        _destroedCar.SetActive(true);
+        _destroedCar.transform.parent = null;
+        _destroedCar.transform.position = transform.position;
+
+        _deathParticles.transform.position = transform.position;
+        _deathParticles.Play();
         CarManager.Instance.RemoveCar(this, true);
     }
 
