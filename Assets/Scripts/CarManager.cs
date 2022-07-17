@@ -35,7 +35,6 @@ public class CarManager : Singleton<CarManager>
         _currentPoliceCarAmount = _maxPoliceCarOnLevel;
 
         OnPoliceCarDestroid?.Invoke(_currentPoliceCarAmount, _maxPoliceCarOnLevel);
-        OnCivilianCarDestroid?.Invoke(_currentlyDestroidCivilians, _availableToDestroyCivilian);
 
         WaveState = WavesState.Spawinng;
     }

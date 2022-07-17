@@ -185,6 +185,11 @@ public class PoliceCar : Car
 
     }
 
+    public void StopPoliceCar()
+    {
+        Speed = 6f;
+    }
+
     public override void Death()
     {
         base.Death();

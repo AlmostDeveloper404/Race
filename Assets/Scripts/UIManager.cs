@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,9 +11,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text _policeCarCounterText;
     [SerializeField] private Text _waveCompletedText;
     [SerializeField] private Button _reloadButton;
+    [SerializeField] private TMP_Text _levelText;
 
     [SerializeField] private float _waveAnimationTime;
     [SerializeField] private AnimationCurve _fontSizeAnim;
+
+    [SerializeField] private Text _hitCivilCar;
 
     private GameObject[] _bulletIcons;
 
@@ -62,6 +66,13 @@ public class UIManager : MonoBehaviour
         CarShooting.OnReloading += Reload;
         CarShooting.OnShooted += UpdateBulletsIcon;
         CarManager.OnPoliceCarDestroid += UpdatePoliceCarUI;
+        CarManager.OnCivilianCarDestroid += ShowDestroedCivilianText;
+        SceneManager.sceneLoaded += UpdateCurrentLevel;
+    }
+
+    private void UpdateCurrentLevel(Scene arg0, LoadSceneMode arg1)
+    {
+        _levelText.text = $"Level {arg0.buildIndex}";
     }
 
     public void UpdateBulletsIcon()
@@ -128,6 +139,19 @@ public class UIManager : MonoBehaviour
         FillArmo();
     }
 
+    private void ShowDestroedCivilianText(int current, int max)
+    {
+        StartCoroutine(ShowMessage());
+
+    }
+
+    private IEnumerator ShowMessage()
+    {
+        _hitCivilCar.enabled = true;
+        yield return Helpers.Helper.GetWait(2f);
+        _hitCivilCar.enabled = false;
+    }
+
     private void GameOver()
     {
         _finalButton.onClick.RemoveAllListeners();
@@ -152,9 +176,11 @@ public class UIManager : MonoBehaviour
         CarShooting.OnReloading -= Reload;
         CarShooting.OnShooted -= UpdateBulletsIcon;
         CarManager.OnPoliceCarDestroid -= UpdatePoliceCarUI;
+        CarManager.OnCivilianCarDestroid -= ShowDestroedCivilianText;
         GameManager.OnStartSpawnNewWave -= ShowWaveEnding;
         GameManager.OnGameOver -= GameOver;
         GameManager.OnLevelCompleted -= LevelCompleted;
+        SceneManager.sceneLoaded -= UpdateCurrentLevel;
     }
 
 }

@@ -24,10 +24,10 @@ public class GameManager : Singleton<GameManager>
 
     private void SceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        
+        Time.timeScale = 1f;
+
         if (SceneManager.GetActiveScene().buildIndex != 0 && _unloadedSceneIndex == 0)
         {
-            Debug.Log("Nope");
             ChangeGameState(GameState.CutScene);
         }
         else
@@ -92,7 +92,14 @@ public class GameManager : Singleton<GameManager>
     public void NextLevel()
     {
         _unloadedSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        PlayerPrefs.SetInt(LevelManager.Instance._progressingKey, _unloadedSceneIndex);
+
+        if (SceneManager.sceneCountInBuildSettings == _unloadedSceneIndex)
+        {
+            SceneManager.LoadScene(0);
+            return;
+        }
+        SceneManager.LoadScene(_unloadedSceneIndex);
     }
 
     public void Restart()

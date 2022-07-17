@@ -10388,7 +10388,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _deathCar: {fileID: 54766926}
-  _distanceToAttack: 12
+  _distanceToAttack: 14
   PoliceCarState: 0
 --- !u!95 &8356810212466782298
 Animator:

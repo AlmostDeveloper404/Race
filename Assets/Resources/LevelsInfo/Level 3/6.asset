@@ -10,80 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9d7aae737718b14c93a049ffde2f7eb, type: 3}
-  m_Name: 4
+  m_Name: 6
   m_EditorClassIdentifier: 
-  WaveIndex: 0
   CarInfo:
   - SpawnInterval: 1
-    CarType: 0
-    CurrentRunway: 1
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 0
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 1
-  - SpawnInterval: 0
-    CarType: 1
-    CurrentRunway: 0
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 1
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 2
-  - SpawnInterval: 1
-    CarType: 1
-    CurrentRunway: 2
-  - SpawnInterval: 1
-    CarType: 0
-    CurrentRunway: 1
-  - SpawnInterval: 1
-    CarType: 1
-    CurrentRunway: 0
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 1
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 2
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 2
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 2
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 1
-  - SpawnInterval: 3
-    CarType: 0
-    CurrentRunway: 2
-  - SpawnInterval: 1
-    CarType: 1
-    CurrentRunway: 0
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 2
-  - SpawnInterval: 3
-    CarType: 0
-    CurrentRunway: 1
-  - SpawnInterval: 1
-    CarType: 1
-    CurrentRunway: 0
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 1
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 0
-  - SpawnInterval: 1
-    CarType: 0
-    CurrentRunway: 2
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 1
-  - SpawnInterval: 1
     CarType: 1
     CurrentRunway: 1
   - SpawnInterval: 2
@@ -94,13 +24,82 @@ MonoBehaviour:
     CurrentRunway: 1
   - SpawnInterval: 3
     CarType: 0
+    CurrentRunway: 1
+  - SpawnInterval: 2
+    CarType: 1
+    CurrentRunway: 2
+  - SpawnInterval: 1.5
+    CarType: 1
+    CurrentRunway: 1
+  - SpawnInterval: 1
+    CarType: 0
+    CurrentRunway: 2
+  - SpawnInterval: 3
+    CarType: 0
+    CurrentRunway: 1
+  - SpawnInterval: 2
+    CarType: 1
     CurrentRunway: 0
+  - SpawnInterval: 1.5
+    CarType: 1
+    CurrentRunway: 1
+  - SpawnInterval: 2
+    CarType: 0
+    CurrentRunway: 2
+  - SpawnInterval: 2
+    CarType: 0
+    CurrentRunway: 1
+  - SpawnInterval: 0
+    CarType: 1
+    CurrentRunway: 2
   - SpawnInterval: 2
     CarType: 1
     CurrentRunway: 0
   - SpawnInterval: 2
     CarType: 0
+    CurrentRunway: 2
+  - SpawnInterval: 0
+    CarType: 1
     CurrentRunway: 1
-  - SpawnInterval: 1
+  - SpawnInterval: 3
+    CarType: 0
+    CurrentRunway: 2
+  - SpawnInterval: 3
+    CarType: 1
+    CurrentRunway: 1
+  - SpawnInterval: 2
+    CarType: 0
+    CurrentRunway: 2
+  - SpawnInterval: 2
+    CarType: 1
+    CurrentRunway: 1
+  - SpawnInterval: 1.7
+    CarType: 1
+    CurrentRunway: 0
+  - SpawnInterval: 0
+    CarType: 0
+    CurrentRunway: 2
+  - SpawnInterval: 3
+    CarType: 0
+    CurrentRunway: 2
+  - SpawnInterval: 0
+    CarType: 1
+    CurrentRunway: 2
+  - SpawnInterval: 2
+    CarType: 0
+    CurrentRunway: 2
+  - SpawnInterval: 2
+    CarType: 1
+    CurrentRunway: 2
+  - SpawnInterval: 2
+    CarType: 0
+    CurrentRunway: 2
+  - SpawnInterval: 0
+    CarType: 1
+    CurrentRunway: 1
+  - SpawnInterval: 2
+    CarType: 0
+    CurrentRunway: 2
+  - SpawnInterval: 3
     CarType: 0
     CurrentRunway: 0

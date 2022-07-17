@@ -3,7 +3,7 @@ using UnityEngine;
 public class LevelManager : Singleton<LevelManager>
 {
     public static int LevelProgression;
-    private const string _progressingKey = "Progress";
+    public readonly string _progressingKey = "Progress";
 
     private void Awake()
     {

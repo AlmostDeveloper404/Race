@@ -38,18 +38,23 @@ public class PlayerCar : Car
 
         if (policeCar)
         {
-            Death();
+            policeCar.StopPoliceCar();
+            _animator.SetTrigger(Animations.Death);
+            SoundManager.Instance.PlaySound(_deathSound);
+            //Death();
         }
     }
 
     public override void Death()
     {
-        base.Death();
-        SoundManager.Instance.PlaySound(_deathSound);
+        //base.Death();
+        Time.timeScale = 0;
         GameManager.Instance.ChangeGameState(GameState.GameOver);
         StopAllCoroutines();
 
     }
+
+    
 
     public override void Turn()
     {

@@ -13,7 +13,7 @@ public class Car : MonoBehaviour
     public CarTypes CurrentCarType;
     public CurrentRunway CurrentRunway;
 
-    private Animator _animator;
+    protected Animator _animator;
 
     [SerializeField] private float _turningSpeed;
 
