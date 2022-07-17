@@ -11,6 +11,7 @@ public class CarShooting : MonoBehaviour
     [SerializeField] private int _bulletsCapacity;
     [SerializeField] private float _intervalBetweenShots;
     [SerializeField] private float _reloadTime;
+    [SerializeField] private AudioClip _launchRocketSound;
 
     [SerializeField] private GameObject _missile;
 
@@ -65,6 +66,7 @@ public class CarShooting : MonoBehaviour
 
             if (!bullet.isActiveAndEnabled && _bulletsUsed < _bulletsCapacity)
             {
+                SoundManager.Instance.PlaySound(_launchRocketSound);
                 _bulletsUsed++;
                 if (_bulletsUsed == _bulletsCapacity)
                 {

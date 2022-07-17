@@ -35,8 +35,13 @@ public class Car : MonoBehaviour
     private Vector3 _currentPos;
 
     protected float _timer;
+
+    [Header("Clips")]
+    [SerializeField] protected AudioClip _deathSound;
+    [SerializeField] protected AudioClip _turningLeftSound;
+    [SerializeField] protected AudioClip _turningRightSound;
+
     [SerializeField] protected float _callsInSec;
-    [SerializeField] protected ParticleSystem _deathParticles;
 
 
 
@@ -160,6 +165,7 @@ public class Car : MonoBehaviour
         if (_value != value)
         {
             _animator.SetTrigger(_value < value ? Animations.TurnRight : Animations.TurnLeft);
+            SoundManager.Instance.PlaySound(_value < value ? _turningRightSound : _turningLeftSound);
             SwitchEmmiting();
             StartCoroutine(DisableEmiting());
         }

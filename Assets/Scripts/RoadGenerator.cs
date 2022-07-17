@@ -11,7 +11,10 @@ public class RoadGenerator : Singleton<RoadGenerator>
 
     private void Start()
     {
-        Generate();
+        for (int i = 0; i < 2; i++)
+        {
+            Generate();
+        }
     }
 
     public void Generate()

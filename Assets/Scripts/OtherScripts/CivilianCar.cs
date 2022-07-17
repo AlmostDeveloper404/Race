@@ -16,6 +16,7 @@ public class CivilianCar : Car
 
         if (bullet)
         {
+            SoundManager.Instance.PlaySound(_deathSound);
             bullet.Disable();
             Death();
         }
@@ -34,8 +35,7 @@ public class CivilianCar : Car
         _destroedCar.transform.parent = null;
         _destroedCar.transform.position = transform.position;
 
-        _deathParticles.transform.position = transform.position;
-        _deathParticles.Play();
+        
         CarManager.Instance.RemoveCar(this, true);
     }
 

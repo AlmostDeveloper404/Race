@@ -1,5 +1,4 @@
 using UnityEngine;
-using System;
 
 public class PlayerCar : Car
 {
@@ -46,6 +45,7 @@ public class PlayerCar : Car
     public override void Death()
     {
         base.Death();
+        SoundManager.Instance.PlaySound(_deathSound);
         GameManager.Instance.ChangeGameState(GameState.GameOver);
         StopAllCoroutines();
 

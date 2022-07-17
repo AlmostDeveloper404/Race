@@ -192,6 +192,7 @@ public class PoliceCar : Car
         _deathCar.transform.parent = null;
         _deathCar.transform.position = transform.position;
 
+        SoundManager.Instance.PlaySound(_deathSound);
         CarManager.Instance.RemoveCar(this, false);
     }
 

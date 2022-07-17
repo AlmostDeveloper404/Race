@@ -20,10 +20,10 @@ MonoBehaviour:
   - SpawnInterval: 0
     CarType: 1
     CurrentRunway: 0
-  - SpawnInterval: 2
+  - SpawnInterval: 3
     CarType: 1
     CurrentRunway: 1
-  - SpawnInterval: 0
+  - SpawnInterval: 1
     CarType: 0
     CurrentRunway: 1
   - SpawnInterval: 2
@@ -34,60 +34,6 @@ MonoBehaviour:
     CurrentRunway: 2
   - SpawnInterval: 1
     CarType: 1
-    CurrentRunway: 2
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 1
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 0
-  - SpawnInterval: 0.5
-    CarType: 1
-    CurrentRunway: 1
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 2
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 1
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 2
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 1
-  - SpawnInterval: 0
-    CarType: 0
-    CurrentRunway: 2
-  - SpawnInterval: 1
-    CarType: 0
-    CurrentRunway: 0
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 0
-  - SpawnInterval: 1
-    CarType: 1
-    CurrentRunway: 1
-  - SpawnInterval: 0
-    CarType: 0
-    CurrentRunway: 0
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 0
-  - SpawnInterval: 1
-    CarType: 1
-    CurrentRunway: 0
-  - SpawnInterval: 1
-    CarType: 0
-    CurrentRunway: 2
-  - SpawnInterval: 1
-    CarType: 1
-    CurrentRunway: 1
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 1
-  - SpawnInterval: 2
-    CarType: 0
     CurrentRunway: 2
   - SpawnInterval: 3
     CarType: 0
@@ -95,12 +41,21 @@ MonoBehaviour:
   - SpawnInterval: 2
     CarType: 1
     CurrentRunway: 0
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 0
-  - SpawnInterval: 3
-    CarType: 0
+  - SpawnInterval: 1
+    CarType: 1
     CurrentRunway: 1
   - SpawnInterval: 2
+    CarType: 1
+    CurrentRunway: 2
+  - SpawnInterval: 2
+    CarType: 1
+    CurrentRunway: 1
+  - SpawnInterval: 3
     CarType: 0
+    CurrentRunway: 2
+  - SpawnInterval: 1
+    CarType: 1
     CurrentRunway: 0
+  - SpawnInterval: 2
+    CarType: 0
+    CurrentRunway: 2

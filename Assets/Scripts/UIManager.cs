@@ -7,8 +7,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private Transform _content;
     [SerializeField] private Image _foregroundImage;
-    [SerializeField] private TMP_Text _policeCarCounterText;
-    [SerializeField] private TMP_Text _civilianCarCounterText;
+    [SerializeField] private Text _policeCarCounterText;
     [SerializeField] private Text _waveCompletedText;
     [SerializeField] private Button _reloadButton;
 
@@ -16,6 +15,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] private AnimationCurve _fontSizeAnim;
 
     private GameObject[] _bulletIcons;
+
+    [Header("Final Panal")]
+    [SerializeField] private TMP_Text _endText;
+    [SerializeField] private GameObject _finalPanal;
+    [SerializeField] private Button _finalButton;
+    [SerializeField] private Text _buttonText;
+
     private void Awake()
     {
         _bulletIcons = new GameObject[_content.childCount];
@@ -52,11 +58,10 @@ public class UIManager : MonoBehaviour
     {
         GameManager.OnLevelCompleted += LevelCompleted;
         GameManager.OnGameOver += GameOver;
+        GameManager.OnStartSpawnNewWave += ShowWaveEnding;
         CarShooting.OnReloading += Reload;
         CarShooting.OnShooted += UpdateBulletsIcon;
         CarManager.OnPoliceCarDestroid += UpdatePoliceCarUI;
-        CarManager.OnCivilianCarDestroid += UpdateCivilianCarUI;
-        GameManager.OnStartSpawnNewWave += ShowWaveEnding;
     }
 
     public void UpdateBulletsIcon()
@@ -102,12 +107,6 @@ public class UIManager : MonoBehaviour
         _policeCarCounterText.text = $"{currentPoliceCars}/{maxPoliceCarsOnLevel}";
     }
 
-    private void UpdateCivilianCarUI(int currentCivilianCars, int maxCivilianCarsOnLevel)
-    {
-        _civilianCarCounterText.text = $"{currentCivilianCars}/{maxCivilianCarsOnLevel}";
-    }
-
-
     private void Reload(float _reloadingTime)
     {
         StartCoroutine(Reloading(_reloadingTime));
@@ -131,13 +130,21 @@ public class UIManager : MonoBehaviour
 
     private void GameOver()
     {
-        _waveCompletedText.text = "Game Over!";
-        ShowWaveEnding();
+        _finalButton.onClick.RemoveAllListeners();
+
+        _finalPanal.SetActive(true);
+        _buttonText.text = "Try again!";
+        _endText.text = "Game Over";
+        _finalButton.onClick.AddListener(() => GameManager.Instance.Restart());
+
     }
 
     private void LevelCompleted()
     {
-        _waveCompletedText.text = "Level Completed!";
+        _finalPanal.SetActive(true);
+        _buttonText.text = "Next Level";
+        _endText.text = "Level Completed!";
+        _finalButton.onClick.AddListener(() => GameManager.Instance.NextLevel());
     }
 
     private void OnDisable()
@@ -145,7 +152,6 @@ public class UIManager : MonoBehaviour
         CarShooting.OnReloading -= Reload;
         CarShooting.OnShooted -= UpdateBulletsIcon;
         CarManager.OnPoliceCarDestroid -= UpdatePoliceCarUI;
-        CarManager.OnCivilianCarDestroid -= UpdateCivilianCarUI;
         GameManager.OnStartSpawnNewWave -= ShowWaveEnding;
         GameManager.OnGameOver -= GameOver;
         GameManager.OnLevelCompleted -= LevelCompleted;

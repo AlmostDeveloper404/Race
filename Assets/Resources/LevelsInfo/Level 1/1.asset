@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveIndex: 0
   CarInfo:
-  - SpawnInterval: 1
+  - SpawnInterval: 0.5
     CarType: 1
     CurrentRunway: 1
   - SpawnInterval: 0
