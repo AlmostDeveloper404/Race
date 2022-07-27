@@ -58,7 +58,7 @@ public class CarShooting : MonoBehaviour
 
     private void Shoot()
     {
-        _missile.SetActive(false);
+        //_missile.SetActive(false);
 
         for (int i = 0; i < _allBullets.Length; i++)
         {
@@ -89,7 +89,13 @@ public class CarShooting : MonoBehaviour
 
     private void EndFastReloading()
     {
-        _missile.SetActive(true);
+        //_missile.SetActive(true);
+    }
+
+    public void StopShooting()
+    {
+        _animator.StopPlayback();
+        enabled = false;
     }
 
     public void Reload()
@@ -104,7 +110,7 @@ public class CarShooting : MonoBehaviour
     {
         _bulletsUsed = _bulletsCapacity;
         yield return Helpers.Helper.GetWait(_reloadTime);
-        _missile.SetActive(true);
+        //_missile.SetActive(true);
         _animator.SetBool(Animations.IsReloading, false);
         _bulletsUsed = 0;
     }

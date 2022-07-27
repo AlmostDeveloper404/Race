@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 54766929}
   - component: {fileID: 54766928}
   - component: {fileID: 1206356995091735782}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PoliceCarDestroed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 318906253}
   - component: {fileID: 318906256}
   - component: {fileID: 318906255}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Police_Light_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 1011163252}
   - component: {fileID: 1011163255}
   - component: {fileID: 1011163254}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Police_Light_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 1159734819}
   - component: {fileID: 1159734821}
   - component: {fileID: 1159734820}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Car_Police_Wheel_fr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 1222085139}
   - component: {fileID: 1222085141}
   - component: {fileID: 1222085140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Car_Police_Wheel_rr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 1259581211}
   - component: {fileID: 1259581213}
   - component: {fileID: 1259581212}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Car_Police_Wheel_rl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 1448129445}
   - component: {fileID: 1448129447}
   - component: {fileID: 1448129446}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5328,7 +5328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1533225616}
   - component: {fileID: 5289070492955246856}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: LightLogic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5379,7 +5379,7 @@ GameObject:
   - component: {fileID: 1795234294}
   - component: {fileID: 1795234296}
   - component: {fileID: 1795234295}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Car_Police_Wheel_fl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5461,7 +5461,7 @@ GameObject:
   - component: {fileID: 1966226540}
   - component: {fileID: 1966226542}
   - component: {fileID: 1966226541}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10265,10 +10265,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3123431065360410874}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: LeftBoxCentre
   m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10280,7 +10280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4415091897411081921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.25, y: 0, z: -2.0833333}
+  m_LocalPosition: {x: -3.25, y: 0, z: -0.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4593096404301869942}
@@ -10300,7 +10300,7 @@ GameObject:
   - component: {fileID: -629554644343227115}
   - component: {fileID: 8356810212466782298}
   - component: {fileID: 2218784805430843150}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: PoliceCar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10370,23 +10370,26 @@ MonoBehaviour:
   Speed: 22
   CurrentCarType: 0
   CurrentRunway: 0
-  _turningSpeed: 6
-  _renderers: []
-  _timeToEmit: 0
-  _rightBox: {fileID: 4852739905952933970}
-  _leftBox: {fileID: 3123431065360410874}
-  _boxOffset: 5
-  _boxWidth: 0.5
-  _boxLength: 1.5
-  _forwardBoxSize: {x: 0.5, y: 1}
   _lineSizes: {x: -3.25, y: 0, z: 3.25}
   _deathSound: {fileID: 8300000, guid: 608046a5995a46d40af29fdae1957ca9, type: 3}
+  _turningSpeed: 6
+  _rightBox: {fileID: 4852739905952933970}
+  _leftBox: {fileID: 3123431065360410874}
+  _boxOffset: 4
+  _boxWidth: 0.5
+  _boxLength: 1
+  _forwardBoxSize: {x: 0.5, y: 1}
   _turningLeftSound: {fileID: 8300000, guid: 43397d5fea5da3a4797c07f78995d6d1, type: 3}
   _turningRightSound: {fileID: 8300000, guid: e95c4d10582a9e048aedb0c9e91b6cfa, type: 3}
-  _callsInSec: 0.3
-  _overlapBoxMask:
+  _callsInSec: 0.2
+  _turnMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
+  _carInFrontMask:
+    serializedVersion: 2
+    m_Bits: 1280
+  _renderers: []
+  _timeToEmit: 0
   _deathCar: {fileID: 54766926}
   _distanceToAttack: 14
   PoliceCarState: 0
@@ -10421,7 +10424,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: db6e4418d99ce0d4b86c907f793dd38f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.075
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10514,10 +10517,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4852739905952933970}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: RightBoxCentre
   m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10529,7 +10532,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5339893820096960575}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.25, y: 0, z: -2.0833333}
+  m_LocalPosition: {x: 3.25, y: 0, z: -0.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4593096404301869942}
@@ -10546,7 +10549,7 @@ GameObject:
   - component: {fileID: 6480427906033563671}
   - component: {fileID: 6455425230266688195}
   - component: {fileID: 6463598655207409199}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Car_Police_Wheel_fr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10628,7 +10631,7 @@ GameObject:
   - component: {fileID: 6481019235051339461}
   - component: {fileID: 6456178008670212081}
   - component: {fileID: 6463642405025002351}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PoliceCarGRX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10715,7 +10718,7 @@ GameObject:
   - component: {fileID: 6481188075534263521}
   - component: {fileID: 6455273417599637479}
   - component: {fileID: 6463685439935099967}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Car_Police_Wheel_rr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10797,7 +10800,7 @@ GameObject:
   - component: {fileID: 6480562040268411099}
   - component: {fileID: 6455349030408784569}
   - component: {fileID: 6464164377564588019}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Car_Police_Wheel_rl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10879,7 +10882,7 @@ GameObject:
   - component: {fileID: 6480343075448004799}
   - component: {fileID: 6455902416814134623}
   - component: {fileID: 6463088286010884275}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Car_Police_Wheel_fl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10957,9 +10960,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 54766927}
     m_Modifications:
+    - target: {fileID: 1000010336741610, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011298463270, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011796581256, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
       propertyPath: m_Name
       value: BigExplosionEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012348499044, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013371323466, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000014207458990, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108256732129644, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4000010212820824, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
       propertyPath: m_RootOrder

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class CarSpawner : Singleton<CarManager>
+public class CarSpawner : Singleton<CarSpawner>
 {
     public static Action OnNextWaveReady;
 
@@ -125,7 +125,7 @@ public class CarSpawner : Singleton<CarManager>
             {
                 if (_allCars[c].CurrentCarType == currentWave.CarInfo[i].CarType && !_allCars[c].IsEnabled())
                 {
-                    Spawn(_allCars[c], currentWave.CarInfo[i].CurrentRunway);
+                    Spawn(_allCars[c], currentWave.CarInfo[i].CurrentRunway, currentWave.CarInfo[i]);
                     break;
                 }
                 else
@@ -141,7 +141,7 @@ public class CarSpawner : Singleton<CarManager>
 
 
 
-    private void Spawn(Car carToSpawn, CurrentRunway currentRunway)
+    private void Spawn(Car carToSpawn, CurrentRunway currentRunway, CarInfo carInfo)
     {
         int lineIndex = 0;
 
@@ -162,7 +162,7 @@ public class CarSpawner : Singleton<CarManager>
 
         Transform spawnPoint = carToSpawn.CurrentCarType == CarTypes.Civilian ? _spawnPoints[lineIndex + 3] : _spawnPoints[lineIndex];
 
-        carToSpawn.Enable(spawnPoint, currentRunway);
+        carToSpawn.Enable(spawnPoint, currentRunway, carInfo.Customization);
         CarManager.Instance.AddCar(carToSpawn);
     }
 }

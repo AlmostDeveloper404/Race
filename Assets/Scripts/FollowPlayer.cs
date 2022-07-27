@@ -19,7 +19,7 @@ public class FollowPlayer : MonoBehaviour
         {
             _cameraPosition = transform.position;
             _cameraPosition = new Vector3(0f, 0f, _playerCar.position.z);
-            transform.position = Vector3.Lerp(transform.position, _cameraPosition, Time.deltaTime * 10f);
+            transform.position = Vector3.Lerp(transform.position, _cameraPosition, Time.deltaTime * 12f);
         }
     }
 

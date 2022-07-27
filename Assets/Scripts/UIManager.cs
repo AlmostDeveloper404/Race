@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text _policeCarCounterText;
     [SerializeField] private Text _waveCompletedText;
     [SerializeField] private Button _reloadButton;
-    [SerializeField] private TMP_Text _levelText;
+    [SerializeField] private Text _levelText;
 
     [SerializeField] private float _waveAnimationTime;
     [SerializeField] private AnimationCurve _fontSizeAnim;

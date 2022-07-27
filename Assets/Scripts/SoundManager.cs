@@ -65,4 +65,14 @@ public class SoundManager : MonoBehaviour
         PlayerPrefs.SetInt(MusicKey, _music.mute == false ? 0 : 1);
     }
 
+    public void PauseSounds()
+    {
+        AudioListener.volume = 0f;
+    }
+
+    public void ResumeSounds()
+    {
+        AudioListener.volume = 1f;
+    }
+
 }

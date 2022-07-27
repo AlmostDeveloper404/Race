@@ -31,7 +31,7 @@ MonoBehaviour:
   - SpawnInterval: 2
     CarType: 0
     CurrentRunway: 1
-  - SpawnInterval: 0
+  - SpawnInterval: 2
     CarType: 0
     CurrentRunway: 0
   - SpawnInterval: 0

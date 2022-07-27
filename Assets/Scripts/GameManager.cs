@@ -69,11 +69,13 @@ public class GameManager : Singleton<GameManager>
     public void Pause()
     {
         Time.timeScale = 0;
+        SoundManager.Instance.PauseSounds();
     }
 
     public void Resume()
     {
         Time.timeScale = 1;
+        SoundManager.Instance.ResumeSounds();
     }
 
 
@@ -92,13 +94,14 @@ public class GameManager : Singleton<GameManager>
     public void NextLevel()
     {
         _unloadedSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        PlayerPrefs.SetInt(LevelManager.Instance._progressingKey, _unloadedSceneIndex);
+
 
         if (SceneManager.sceneCountInBuildSettings == _unloadedSceneIndex)
         {
             SceneManager.LoadScene(0);
             return;
         }
+        PlayerPrefs.SetInt(LevelManager.Instance._progressingKey, _unloadedSceneIndex);
         SceneManager.LoadScene(_unloadedSceneIndex);
     }
 
