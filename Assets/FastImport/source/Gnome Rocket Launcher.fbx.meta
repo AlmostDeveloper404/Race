@@ -3,7 +3,52 @@ guid: 77f7ab4e340d9e14fa7c3e8ac6fc1a4b
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Heaxgonpart17Mtl
+    second: {fileID: 2100000, guid: 8a061a495ebb77e47b04258f9ad2efa9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Heaxgonpart2Mtl.001
+    second: {fileID: 2100000, guid: 58a74ee0ba451ce4699d9c8f47d74154, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Heaxgonpart3Mtl
+    second: {fileID: 2100000, guid: 41164e6ace0e09848a3325a42259abce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Heaxgonpart4Mtl
+    second: {fileID: 2100000, guid: 1a16973074282f8438b2036f372a94f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Part16Mtl.001
+    second: {fileID: 2100000, guid: 6da65276e73d49246ab609ff55aa9b8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Part1Mtl.006
+    second: {fileID: 2100000, guid: 5c43037592ddf234a98cdfcc8d0c1e0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Part22Mtl.001
+    second: {fileID: 2100000, guid: c00b8250cdf50274096ad352ae21fa82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Part4Mtl.004
+    second: {fileID: 2100000, guid: c3dd60ca2a558e84fa82c42bbd2c8ee4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roofpart1Mtl
+    second: {fileID: 2100000, guid: 2de389c33b29b3744890f3c5671567c6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

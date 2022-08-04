@@ -1,17 +1,15 @@
 using UnityEngine;
 using System.Collections;
-using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+
     [SerializeField] private Transform _content;
     [SerializeField] private Image _foregroundImage;
-    [SerializeField] private Text _policeCarCounterText;
     [SerializeField] private Text _waveCompletedText;
     [SerializeField] private Button _reloadButton;
-    [SerializeField] private Text _levelText;
 
     [SerializeField] private float _waveAnimationTime;
     [SerializeField] private AnimationCurve _fontSizeAnim;
@@ -19,9 +17,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text _hitCivilCar;
 
     private GameObject[] _bulletIcons;
+    [Header("UI GRX")]
+    [SerializeField] private Text _policeCarCounterText;
+    [SerializeField] private Text _levelText;
+    [SerializeField] private Image _policeCarIcon;
+    [SerializeField] private Image _reloadButtonImage;
+
 
     [Header("Final Panal")]
-    [SerializeField] private TMP_Text _endText;
+    [SerializeField] private Text _endText;
     [SerializeField] private GameObject _finalPanal;
     [SerializeField] private Button _finalButton;
     [SerializeField] private Text _buttonText;
@@ -33,11 +37,10 @@ public class UIManager : MonoBehaviour
         {
             _bulletIcons[i] = _content.GetChild(i).gameObject;
 
-            GameObject bulletIcon = _bulletIcons[i];
-            bulletIcon.SetActive(i < 4);
+            //GameObject bulletIcon = _bulletIcons[i];
+            //bulletIcon.SetActive(i < 4);
         }
 
-        FillArmo();
     }
 
     private void FillArmo()
@@ -63,11 +66,23 @@ public class UIManager : MonoBehaviour
         GameManager.OnLevelCompleted += LevelCompleted;
         GameManager.OnGameOver += GameOver;
         GameManager.OnStartSpawnNewWave += ShowWaveEnding;
+        GameManager.OnGameStarted += ShowCounter;
         CarShooting.OnReloading += Reload;
         CarShooting.OnShooted += UpdateBulletsIcon;
         CarManager.OnPoliceCarDestroid += UpdatePoliceCarUI;
         CarManager.OnCivilianCarDestroid += ShowDestroedCivilianText;
         SceneManager.sceneLoaded += UpdateCurrentLevel;
+    }
+
+    private void ShowCounter()
+    {
+        _levelText.enabled = true;
+        _policeCarCounterText.enabled = true;
+        _policeCarIcon.enabled = true;
+        _foregroundImage.enabled = true;
+        _reloadButtonImage.enabled = true;
+        FillArmo();
+
     }
 
     private void UpdateCurrentLevel(Scene arg0, LoadSceneMode arg1)
@@ -158,7 +173,7 @@ public class UIManager : MonoBehaviour
 
         _finalPanal.SetActive(true);
         _buttonText.text = "Try again!";
-        _endText.text = "Game Over";
+        _endText.text = "Gotcha!";
         _finalButton.onClick.AddListener(() => GameManager.Instance.Restart());
 
     }
@@ -180,6 +195,7 @@ public class UIManager : MonoBehaviour
         GameManager.OnStartSpawnNewWave -= ShowWaveEnding;
         GameManager.OnGameOver -= GameOver;
         GameManager.OnLevelCompleted -= LevelCompleted;
+        GameManager.OnGameStarted -= ShowCounter;
         SceneManager.sceneLoaded -= UpdateCurrentLevel;
     }
 
