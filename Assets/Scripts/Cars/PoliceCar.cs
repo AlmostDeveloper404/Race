@@ -8,6 +8,7 @@ public class PoliceCar : ActiveCars
     private PlayerCar _playerCar;
 
     [SerializeField] private GameObject _deathCar;
+    [SerializeField] private Vector3 _offset;
 
     [SerializeField] private float _distanceToAttack;
 
@@ -62,7 +63,6 @@ public class PoliceCar : ActiveCars
                     }
                     if (car && CurrentRunway == car.CurrentRunway && car.CurrentCarType == CarTypes.Civilian || CurrentRunway == _playerCar.CurrentRunway)
                     {
-                        //Speed = car ? car.Speed : Speed;
                         ChangeRunway();
                     }
                     else if (car && CurrentRunway == car.CurrentRunway && car.CurrentCarType == CarTypes.Police)
@@ -119,8 +119,6 @@ public class PoliceCar : ActiveCars
 
         CurrentRunway currentRunway = GetRunwayWithCivilianTraffic();
 
-        //Debug.Log($"{gameObject.name},{_runwayBeforeTurn},{CurrentRunway},{_playerCar.CurrentRunway}");
-
         if (currentRunway == _playerCar.CurrentRunway)
         {
             if (_runwayBeforeTurn != CurrentRunway.Centre && currentRunway != CurrentRunway.Centre)
@@ -139,7 +137,6 @@ public class PoliceCar : ActiveCars
             }
         }
 
-        //Debug.Log($"{gameObject.name} = {currentRunway}");
         if (CanTurn(currentRunway))
         {
             Speed = _policeCarSpeed;
@@ -147,7 +144,6 @@ public class PoliceCar : ActiveCars
         }
         else
         {
-            Debug.Log(playerRunway);
             if (CanTurn(playerRunway))
             {
                 Speed = _policeCarSpeed;
@@ -214,7 +210,7 @@ public class PoliceCar : ActiveCars
         base.Death();
         _deathCar.SetActive(true);
         _deathCar.transform.parent = null;
-        _deathCar.transform.position = transform.position;
+        _deathCar.transform.position = transform.position + _offset;
 
         SoundManager.Instance.PlaySound(_deathSound);
         CarManager.Instance.RemoveCar(this, false);
@@ -223,5 +219,6 @@ public class PoliceCar : ActiveCars
     private void GameOver()
     {
         PoliceCarState = PoliceCarState.Idle;
+        this.enabled = false;
     }
 }

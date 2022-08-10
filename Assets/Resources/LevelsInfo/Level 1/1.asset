@@ -12,29 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d7aae737718b14c93a049ffde2f7eb, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  WaveIndex: 0
   CarInfo:
   - SpawnInterval: 0.5
     CarType: 1
     CurrentRunway: 1
+    Customization: 1
   - SpawnInterval: 0
     CarType: 0
     CurrentRunway: 0
+    Customization: 0
   - SpawnInterval: 3
     CarType: 1
     CurrentRunway: 2
+    Customization: 5
   - SpawnInterval: 1
     CarType: 1
     CurrentRunway: 0
+    Customization: 4
   - SpawnInterval: 2
     CarType: 1
     CurrentRunway: 1
+    Customization: 3
   - SpawnInterval: 2
     CarType: 0
     CurrentRunway: 2
+    Customization: 0
   - SpawnInterval: 2
     CarType: 1
-    CurrentRunway: 0
+    CurrentRunway: 2
+    Customization: 0
   - SpawnInterval: 0
     CarType: 0
-    CurrentRunway: 0
+    CurrentRunway: 1
+    Customization: 0

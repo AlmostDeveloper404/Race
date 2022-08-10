@@ -2,7 +2,8 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum GameState { CutScene, Game, GameOver, WaveCompleted, LevelCompleted, StartSpawning }
+public enum GameState { CutScene, CutSceneEnded, Game, GameOver, WaveCompleted, LevelCompleted, StartSpawning }
+public enum GameOverState { Civilians, Police }
 
 public class GameManager : Singleton<GameManager>
 {
@@ -14,6 +15,7 @@ public class GameManager : Singleton<GameManager>
     public static Action OnPlayingAnimation;
     public static Action OnCutSceneStarted;
     public static Action OnGameStarted;
+    public static Action OnCutSceneEnded;
 
     private static int _unloadedSceneIndex;
 
@@ -63,6 +65,9 @@ public class GameManager : Singleton<GameManager>
             case GameState.StartSpawning:
                 OnStartSpawnNewWave?.Invoke();
                 break;
+            case GameState.CutSceneEnded:
+                OnCutSceneEnded?.Invoke();
+                break;
         }
     }
 
@@ -81,7 +86,7 @@ public class GameManager : Singleton<GameManager>
 
     public void CutSceneEnd()
     {
-        ChangeGameState(GameState.Game);
+        ChangeGameState(GameState.CutSceneEnded);
     }
 
     public void BackToMenu()

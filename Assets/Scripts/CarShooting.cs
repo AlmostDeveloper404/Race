@@ -13,8 +13,6 @@ public class CarShooting : MonoBehaviour
     [SerializeField] private float _reloadTime;
     [SerializeField] private AudioClip _launchRocketSound;
 
-    [SerializeField] private GameObject _missile;
-
     private int _bulletsUsed;
     private float _timer;
 
@@ -27,7 +25,7 @@ public class CarShooting : MonoBehaviour
 
     private void Awake()
     {
-        _timer = _intervalBetweenShots;
+        _timer = 0;
 
         _animator = GetComponent<Animator>();
 
@@ -58,8 +56,6 @@ public class CarShooting : MonoBehaviour
 
     private void Shoot()
     {
-        //_missile.SetActive(false);
-
         for (int i = 0; i < _allBullets.Length; i++)
         {
             Bullet bullet = _allBullets[i];
@@ -86,12 +82,6 @@ public class CarShooting : MonoBehaviour
             }
         }
     }
-
-    private void EndFastReloading()
-    {
-        //_missile.SetActive(true);
-    }
-
     public void StopShooting()
     {
         _animator.StopPlayback();
@@ -110,7 +100,6 @@ public class CarShooting : MonoBehaviour
     {
         _bulletsUsed = _bulletsCapacity;
         yield return Helpers.Helper.GetWait(_reloadTime);
-        //_missile.SetActive(true);
         _animator.SetBool(Animations.IsReloading, false);
         _bulletsUsed = 0;
     }

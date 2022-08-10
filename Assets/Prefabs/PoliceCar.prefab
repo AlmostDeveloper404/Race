@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54766926}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000002950429}
-  m_LocalPosition: {x: 0, y: -0.5, z: 2.25}
+  m_LocalPosition: {x: 0, y: -0.6, z: 2.25}
   m_LocalScale: {x: 3, y: 2, z: 3}
   m_Children:
   - {fileID: 1795234294}
@@ -162,7 +162,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 19f12afb66cc4b94d81ad1ab94a43624, type: 2}
+  - {fileID: 2100000, guid: cd26e456c5be49847a0f12f0201e7883, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5364,7 +5364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _emissionMat: {fileID: 2100000, guid: dcd4d0a79f4574e4ab8921ab10bd687c, type: 2}
-  _basicMat: {fileID: 2100000, guid: 19f12afb66cc4b94d81ad1ab94a43624, type: 2}
+  _basicMat: {fileID: 2100000, guid: cd26e456c5be49847a0f12f0201e7883, type: 2}
   _leftLight: {fileID: 1011163254}
   _rightLight: {fileID: 318906255}
   _interval: 0.5
@@ -5585,6 +5585,7 @@ MonoBehaviour:
   _renderers: []
   _timeToEmit: 0
   _deathCar: {fileID: 54766926}
+  _offset: {x: 0, y: -0.6, z: 2.25}
   _distanceToAttack: 14
   PoliceCarState: 0
 --- !u!95 &8356810212466782298
@@ -5600,7 +5601,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: a2bd4e224d2061e42b1cd4730ef418ec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -5840,7 +5841,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6477313304713451365}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.000002950429}
-  m_LocalPosition: {x: 0, y: -0.5, z: 2.25}
+  m_LocalPosition: {x: 0, y: -0.6, z: 2.25}
   m_LocalScale: {x: 3, y: 2, z: 3}
   m_Children:
   - {fileID: 6480343075448004799}

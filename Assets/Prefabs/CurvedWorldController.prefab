@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7089984261938507959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7089984261938507956}
+  - component: {fileID: 714111968545986467}
+  m_Layer: 0
+  m_Name: CurvedWorldController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7089984261938507956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7089984261938507959}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.6519654, y: 3.1903007, z: 72.63178}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &714111968545986467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7089984261938507959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2651a4c7e50c3274bb02a1b6c03b054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bendType: 2
+  bendID: 1
+  bendPivotPoint: {fileID: 0}
+  bendPivotPointPosition: {x: 3.2499995, y: 0, z: -771.4953}
+  bendRotationCenter: {fileID: 0}
+  bendRotationCenterPosition: {x: 0, y: 0, z: 0}
+  bendRotationAxis: {x: 0, y: 0, z: 0}
+  bendRotationAxisType: 0
+  bendRotationCenter2: {fileID: 0}
+  bendRotationCenter2Position: {x: 0, y: 0, z: 0}
+  bendVerticalSize: -12
+  bendVerticalOffset: 46.35
+  bendHorizontalSize: 3.5
+  bendHorizontalOffset: 0
+  bendCurvatureSize: 0
+  bendCurvatureOffset: 0
+  bendAngle: 0
+  bendAngle2: 0
+  bendMinimumRadius: 0
+  bendMinimumRadius2: 0
+  bendRolloff: 0
+  disableInEditor: 0
+  manualUpdate: 0
+  isExpanded: 1

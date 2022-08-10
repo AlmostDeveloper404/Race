@@ -1,13 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public enum Customization { BasicCar, SmallCar, Flatbed, GarbageTruck, DeliveryTruck, SchoolBus, Muscle, Van, Firetrack, Convertable }
+public enum Customization { BasicCar, SmallCar, Flatbed, GarbageTruck, DeliveryTruck, Muscle, Van, Convertable }
 
 public class CivilianCar : PassiveCar
 {
     [SerializeField] private GameObject _destroedCar;
 
-    [SerializeField] private List<VehicleType> vehicleTypes = new List<VehicleType>();
+    private List<VehicleType> vehicleTypes = new List<VehicleType>();
+    [SerializeField] private Vector3 _offset;
 
     private void Awake()
     {
@@ -75,7 +76,7 @@ public class CivilianCar : PassiveCar
         base.Death();
         _destroedCar.SetActive(true);
         _destroedCar.transform.parent = null;
-        _destroedCar.transform.position = transform.position;
+        _destroedCar.transform.position = transform.position + _offset;
 
 
         CarManager.Instance.RemoveCar(this, true);

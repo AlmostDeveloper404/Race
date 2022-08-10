@@ -803,6 +803,7 @@ MonoBehaviour:
   _foregroundImage: {fileID: 2265551903489626519}
   _waveCompletedText: {fileID: 2265551902283433899}
   _reloadButton: {fileID: 2265551901780388003}
+  _pulsationTime: 2
   _waveAnimationTime: 1
   _fontSizeAnim:
     serializedVersion: 2
@@ -846,6 +847,48 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _pulsationAnimCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 25
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.23521128
+      value: 31.989109
+      inSlope: -19.4353
+      outSlope: -19.4353
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.066721596
+    - serializedVersion: 3
+      time: 0.6865209
+      value: 21.269476
+      inSlope: 26.280897
+      outSlope: 26.280897
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13597666
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 25
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1746,7 +1789,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 44
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1

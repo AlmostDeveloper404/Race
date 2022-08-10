@@ -11,8 +11,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text _waveCompletedText;
     [SerializeField] private Button _reloadButton;
 
+    [SerializeField] private float _pulsationTime;
     [SerializeField] private float _waveAnimationTime;
     [SerializeField] private AnimationCurve _fontSizeAnim;
+    [SerializeField] private AnimationCurve _pulsationAnimCurve;
 
     [SerializeField] private Text _hitCivilCar;
 
@@ -30,15 +32,17 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button _finalButton;
     [SerializeField] private Text _buttonText;
 
+    private Coroutine _pulseCounter;
+
+    private float _destroidCivil;
+    private float _maxAvalilableToDestroy;
+
     private void Awake()
     {
         _bulletIcons = new GameObject[_content.childCount];
         for (int i = 0; i < _bulletIcons.Length; i++)
         {
             _bulletIcons[i] = _content.GetChild(i).gameObject;
-
-            //GameObject bulletIcon = _bulletIcons[i];
-            //bulletIcon.SetActive(i < 4);
         }
 
     }
@@ -130,7 +134,24 @@ public class UIManager : MonoBehaviour
 
     private void UpdatePoliceCarUI(int currentPoliceCars, int maxPoliceCarsOnLevel)
     {
+        if (_pulseCounter == null)
+        {
+            _pulseCounter = StartCoroutine(StartPulsation());
+        }
+
+
         _policeCarCounterText.text = $"{currentPoliceCars}/{maxPoliceCarsOnLevel}";
+    }
+
+    private IEnumerator StartPulsation()
+    {
+        for (float i = 0; i < _pulsationTime; i += Time.deltaTime * _pulsationTime)
+        {
+            _policeCarCounterText.fontSize = Mathf.RoundToInt(_pulsationAnimCurve.Evaluate(i));
+            yield return null;
+        }
+
+        _pulseCounter = null;
     }
 
     private void Reload(float _reloadingTime)
@@ -156,6 +177,8 @@ public class UIManager : MonoBehaviour
 
     private void ShowDestroedCivilianText(int current, int max)
     {
+        _destroidCivil = current;
+        _maxAvalilableToDestroy = max;
         StartCoroutine(ShowMessage());
 
     }
@@ -173,7 +196,7 @@ public class UIManager : MonoBehaviour
 
         _finalPanal.SetActive(true);
         _buttonText.text = "Try again!";
-        _endText.text = "Gotcha!";
+        _endText.text = _destroidCivil == _maxAvalilableToDestroy ? "Civil cars destroyed! " : "Gotcha!";
         _finalButton.onClick.AddListener(() => GameManager.Instance.Restart());
 
     }
@@ -181,8 +204,12 @@ public class UIManager : MonoBehaviour
     private void LevelCompleted()
     {
         _finalPanal.SetActive(true);
-        _buttonText.text = "Next Level";
-        _endText.text = "Level Completed!";
+
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+
+
+        _buttonText.text = SceneManager.sceneCountInBuildSettings != currentScene + 1 ? "Next Level" : "Back to Menu";
+        _endText.text = SceneManager.sceneCountInBuildSettings != currentScene + 1 ? "Level Completed!" : "Ñongratulations!";
         _finalButton.onClick.AddListener(() => GameManager.Instance.NextLevel());
     }
 

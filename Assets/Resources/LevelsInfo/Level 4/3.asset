@@ -13,63 +13,63 @@ MonoBehaviour:
   m_Name: 3
   m_EditorClassIdentifier: 
   CarInfo:
+  - SpawnInterval: 0.5
+    CarType: 0
+    CurrentRunway: 2
+    Customization: 0
+  - SpawnInterval: 0
+    CarType: 1
+    CurrentRunway: 0
+    Customization: 5
+  - SpawnInterval: 2
+    CarType: 1
+    CurrentRunway: 1
+    Customization: 0
+  - SpawnInterval: 1
+    CarType: 0
+    CurrentRunway: 1
+    Customization: 0
+  - SpawnInterval: 2
+    CarType: 0
+    CurrentRunway: 1
+    Customization: 0
+  - SpawnInterval: 2
+    CarType: 0
+    CurrentRunway: 2
+    Customization: 0
+  - SpawnInterval: 0
+    CarType: 1
+    CurrentRunway: 2
+    Customization: 6
+  - SpawnInterval: 1
+    CarType: 0
+    CurrentRunway: 1
+    Customization: 0
   - SpawnInterval: 1
     CarType: 1
     CurrentRunway: 0
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 0
+    Customization: 7
   - SpawnInterval: 2
     CarType: 1
     CurrentRunway: 1
-  - SpawnInterval: 4
-    CarType: 0
-    CurrentRunway: 0
-  - SpawnInterval: 2.5
-    CarType: 1
-    CurrentRunway: 2
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 1
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 0
-  - SpawnInterval: 2
+    Customization: 0
+  - SpawnInterval: 0
     CarType: 0
     CurrentRunway: 2
-  - SpawnInterval: 2
+    Customization: 0
+  - SpawnInterval: 1
+    CarType: 0
+    CurrentRunway: 1
+    Customization: 0
+  - SpawnInterval: 1
     CarType: 1
     CurrentRunway: 1
-  - SpawnInterval: 2
+    Customization: 0
+  - SpawnInterval: 0
     CarType: 0
     CurrentRunway: 0
+    Customization: 1
   - SpawnInterval: 2
     CarType: 1
     CurrentRunway: 2
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 1
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 1
-  - SpawnInterval: 3
-    CarType: 1
-    CurrentRunway: 0
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 1
-  - SpawnInterval: 3
-    CarType: 0
-    CurrentRunway: 0
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 2
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 2
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 1
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 0
+    Customization: 0
