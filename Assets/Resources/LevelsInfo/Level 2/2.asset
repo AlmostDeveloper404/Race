@@ -15,69 +15,73 @@ MonoBehaviour:
   CarInfo:
   - SpawnInterval: 0.5
     CarType: 1
+    CurrentRunway: 1
+    Customization: 4
+  - SpawnInterval: 2
+    CarType: 1
     CurrentRunway: 0
-    Customization: 7
-  - SpawnInterval: 0
+    Customization: 5
+  - SpawnInterval: 1
     CarType: 0
-    CurrentRunway: 0
+    CurrentRunway: 1
+    Customization: 0
+  - SpawnInterval: 1
+    CarType: 0
+    CurrentRunway: 1
     Customization: 0
   - SpawnInterval: 2
     CarType: 1
-    CurrentRunway: 1
-    Customization: 4
+    CurrentRunway: 2
+    Customization: 7
+  - SpawnInterval: 1.8
+    CarType: 1
+    CurrentRunway: 0
+    Customization: 1
   - SpawnInterval: 1
     CarType: 0
-    CurrentRunway: 0
+    CurrentRunway: 2
     Customization: 0
+  - SpawnInterval: 2
+    CarType: 0
+    CurrentRunway: 1
+    Customization: 6
+  - SpawnInterval: 0
+    CarType: 1
+    CurrentRunway: 1
+    Customization: 7
+  - SpawnInterval: 1
+    CarType: 1
+    CurrentRunway: 1
+    Customization: 0
+  - SpawnInterval: 1
+    CarType: 0
+    CurrentRunway: 2
+    Customization: 3
+  - SpawnInterval: 1
+    CarType: 0
+    CurrentRunway: 1
+    Customization: 1
   - SpawnInterval: 1
     CarType: 1
     CurrentRunway: 2
     Customization: 1
   - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 1
-    Customization: 0
-  - SpawnInterval: 2
     CarType: 1
     CurrentRunway: 0
-    Customization: 6
+    Customization: 2
   - SpawnInterval: 0
     CarType: 0
     CurrentRunway: 2
     Customization: 0
   - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 1
-    Customization: 4
-  - SpawnInterval: 0
-    CarType: 0
-    CurrentRunway: 0
-    Customization: 0
-  - SpawnInterval: 2
-    CarType: 1
-    CurrentRunway: 2
-    Customization: 3
-  - SpawnInterval: 0
     CarType: 1
     CurrentRunway: 1
     Customization: 2
   - SpawnInterval: 2
     CarType: 0
-    CurrentRunway: 1
-    Customization: 0
-  - SpawnInterval: 1
-    CarType: 1
-    CurrentRunway: 0
-    Customization: 7
-  - SpawnInterval: 2
-    CarType: 1
     CurrentRunway: 2
     Customization: 0
-  - SpawnInterval: 2
-    CarType: 0
-    CurrentRunway: 0
-    Customization: 0
-  - SpawnInterval: 2
+  - SpawnInterval: 3
     CarType: 1
     CurrentRunway: 1
     Customization: 5
@@ -86,10 +90,46 @@ MonoBehaviour:
     CurrentRunway: 2
     Customization: 0
   - SpawnInterval: 2
-    CarType: 0
+    CarType: 1
     CurrentRunway: 1
+    Customization: 6
+  - SpawnInterval: 2
+    CarType: 1
+    CurrentRunway: 0
+    Customization: 0
+  - SpawnInterval: 0
+    CarType: 0
+    CurrentRunway: 2
+    Customization: 0
+  - SpawnInterval: 2
+    CarType: 0
+    CurrentRunway: 2
     Customization: 0
   - SpawnInterval: 0
     CarType: 1
-    CurrentRunway: 0
+    CurrentRunway: 2
+    Customization: 4
+  - SpawnInterval: 2
+    CarType: 0
+    CurrentRunway: 2
+    Customization: 0
+  - SpawnInterval: 2
+    CarType: 1
+    CurrentRunway: 2
+    Customization: 5
+  - SpawnInterval: 0
+    CarType: 0
+    CurrentRunway: 2
     Customization: 1
+  - SpawnInterval: 2
+    CarType: 1
+    CurrentRunway: 1
+    Customization: 5
+  - SpawnInterval: 2
+    CarType: 0
+    CurrentRunway: 2
+    Customization: 1
+  - SpawnInterval: 2
+    CarType: 0
+    CurrentRunway: 0
+    Customization: 6

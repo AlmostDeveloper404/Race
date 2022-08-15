@@ -175,11 +175,13 @@ public class UIManager : MonoBehaviour
         FillArmo();
     }
 
-    private void ShowDestroedCivilianText(int current, int max)
+    private void ShowDestroedCivilianText(int current, int max, bool showText)
     {
+        
         _destroidCivil = current;
         _maxAvalilableToDestroy = max;
-        StartCoroutine(ShowMessage());
+
+        if (showText) StartCoroutine(ShowMessage());
 
     }
 

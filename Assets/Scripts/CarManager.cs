@@ -8,7 +8,7 @@ public enum WavesState { Spawinng, EndSpawning }
 public class CarManager : Singleton<CarManager>
 {
     public static Action<int, int> OnPoliceCarDestroid;
-    public static Action<int, int> OnCivilianCarDestroid;
+    public static Action<int, int, bool> OnCivilianCarDestroid;
 
     private List<Car> _allCarsSpawned = new List<Car>();
 
@@ -26,6 +26,12 @@ public class CarManager : Singleton<CarManager>
     private void Awake()
     {
         _carSpawner = GetComponent<CarSpawner>();
+        
+    }
+
+    private void Start()
+    {
+        OnCivilianCarDestroid?.Invoke(_currentlyDestroidCivilians, _availableToDestroyCivilian, false);
     }
 
     private void UpdateCarsInWave()
@@ -72,7 +78,7 @@ public class CarManager : Singleton<CarManager>
         if (car.CurrentCarType == CarTypes.Civilian && isKilled)
         {
             _currentlyDestroidCivilians++;
-            OnCivilianCarDestroid?.Invoke(_currentlyDestroidCivilians, _availableToDestroyCivilian);
+            OnCivilianCarDestroid?.Invoke(_currentlyDestroidCivilians, _availableToDestroyCivilian, true);
 
             if (_currentlyDestroidCivilians == _availableToDestroyCivilian)
             {

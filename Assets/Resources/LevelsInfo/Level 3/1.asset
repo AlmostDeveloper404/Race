@@ -61,7 +61,7 @@ MonoBehaviour:
     CarType: 1
     CurrentRunway: 1
     Customization: 1
-  - SpawnInterval: 1
+  - SpawnInterval: 2
     CarType: 0
     CurrentRunway: 2
     Customization: 0
@@ -69,11 +69,11 @@ MonoBehaviour:
     CarType: 1
     CurrentRunway: 0
     Customization: 0
-  - SpawnInterval: 1
+  - SpawnInterval: 2
     CarType: 0
     CurrentRunway: 0
     Customization: 0
-  - SpawnInterval: 1
+  - SpawnInterval: 2
     CarType: 0
     CurrentRunway: 1
     Customization: 0
