@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Global Volume Profile
   m_EditorClassIdentifier: 
   components:
+  - {fileID: 2826507014025647833}
   - {fileID: 2806450388536860155}
-  - {fileID: 4802572148326640551}
 --- !u!114 &2806450388536860155
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -67,7 +67,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
     min: 0
---- !u!114 &4802572148326640551
+--- !u!114 &2826507014025647833
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,10 +82,10 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   postExposure:
-    m_OverrideState: 1
-    m_Value: -1.01
+    m_OverrideState: 0
+    m_Value: 0
   contrast:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
     min: -100
     max: 100
@@ -96,12 +96,12 @@ MonoBehaviour:
     showAlpha: 0
     showEyeDropper: 1
   hueShift:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
     min: -180
     max: 180
   saturation:
-    m_OverrideState: 1
-    m_Value: 17.4
+    m_OverrideState: 0
+    m_Value: 0
     min: -100
     max: 100

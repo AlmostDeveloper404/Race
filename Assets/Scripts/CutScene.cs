@@ -13,6 +13,7 @@ public class CutScene : Singleton<CutScene>
     private void OnEnable()
     {
         GameManager.OnCutSceneStarted += PlayCutScene;
+        //GameManager.OnGameStarted += DisableCutScene;
         GameManager.OnCutSceneEnded += CutSceneEnded;
     }
     public void PlayCutScene()
@@ -34,6 +35,11 @@ public class CutScene : Singleton<CutScene>
     }
 
 
+    //public void DisableCutScene()
+    //{
+    //    gameObject.SetActive(false);
+    //}
+
     private IEnumerator WaitForSec()
     {
         yield return Helpers.Helper.GetWait(2f);
@@ -43,6 +49,7 @@ public class CutScene : Singleton<CutScene>
     private void OnDisable()
     {
         GameManager.OnCutSceneStarted -= PlayCutScene;
+        //GameManager.OnGameStarted -= DisableCutScene;
         GameManager.OnCutSceneEnded -= CutSceneEnded;
     }
 }
